@@ -28,12 +28,14 @@ targetCompatibility = "1.7"
 
 
 task genDex(dependsOn: [build]) {
-    File dexPath = new File(project.rootDir,"classes.dex")
+    File dexPath = new File(project.rootDir,"assets/classes.dex")
+
+    println dexPath
     File classesDir = new File(project.buildDir,"classes/main")
     ProcessBuilder builder = new ProcessBuilder(
             "/Users/tong/Library/Android/sdk/build-tools/26.0.2/dx"
             ,"--dex"
-            ,"--output=" + dexPath.getAbsolutePath()
+            ,"--output=${dexPath.getAbsolutePath()}"
             ,classesDir.getAbsolutePath());
     Process process = builder.start();
     int status = process.waitFor();

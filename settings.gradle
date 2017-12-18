@@ -16,7 +16,7 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'dex-bytecode-learning'
+rootProject.name = 'dextest-bytecode-learning'
 
 include ':parse'
 include ':testpro'
